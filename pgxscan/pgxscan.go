@@ -72,6 +72,7 @@ func NewDBScanAPI(opts ...dbscan.APIOption) (*dbscan.API, error) {
 		dbscan.WithScannableTypes(
 			(*sql.Scanner)(nil),
 		),
+		dbscan.WithAllowUnknownColumns(true),
 	}
 	opts = append(defaultOpts, opts...)
 	api, err := dbscan.NewAPI(opts...)
